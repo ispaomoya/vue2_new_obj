@@ -6,9 +6,12 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: () => import(/* webpackChunkName: "about" */ '../views/home.vue')
-  },
+    name: 'HomeIndex',
+    component: (resolve) => require(['@/views/homeIndex/index'], resolve),
+    meta: {
+      // title: "首页"
+    }
+  }
   // {
   //   path: '/about',
   //   name: 'about',
