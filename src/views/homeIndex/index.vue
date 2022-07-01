@@ -1,8 +1,11 @@
 <template>
-  <div class="home-index">111</div>
+  <div class="home-index">
+    111
+  </div>
 </template>
 
 <script>
+import { listCpaData } from '@/api/views/homeIndex'
 export default {
   name: 'HomeIndex',
   data() {
@@ -11,13 +14,16 @@ export default {
     }
   },
   created() {
-
+    this.listCpaData()
   },
   mounted() {
 
   },
   methods: {
-
+    async listCpaData() {
+      const data = await listCpaData()
+      console.log('data----------', data)
+    }
   }
 }
 </script>
